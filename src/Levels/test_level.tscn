@@ -1,16 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://mpws8r23jqlv"]
+[gd_scene load_steps=6 format=3 uid="uid://mpws8r23jqlv"]
 
 [ext_resource type="Script" path="res://Levels/test_level.gd" id="1_2wh4b"]
 [ext_resource type="PackedScene" uid="uid://fmdallo5sfsh" path="res://Player/player.tscn" id="2_pskil"]
-[ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="3_yww3l"]
+[ext_resource type="Texture2D" uid="uid://xvrc2c5n28lv" path="res://Sprites/TestMap.png" id="2_se4v3"]
+[ext_resource type="PackedScene" uid="uid://ts63bn8v576m" path="res://Enemies/test_enemy.tscn" id="4_fwlqq"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2cljb"]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_2wh4b")
 
-[node name="Player" parent="." instance=ExtResource("2_pskil")]
-position = Vector2(499, 307)
+[node name="TestMap" type="Sprite2D" parent="."]
+position = Vector2(1505, 1502)
+texture = ExtResource("2_se4v3")
 
-[node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0.0705882, 1)
-position = Vector2(158, 136)
-texture = ExtResource("3_yww3l")
+[node name="Player" parent="." instance=ExtResource("2_pskil")]
+position = Vector2(2726, 2883)
+
+[node name="TestEnemy" parent="." instance=ExtResource("4_fwlqq")]
+position = Vector2(232, 2837)
+
+[node name="TestEnemy2" parent="." instance=ExtResource("4_fwlqq")]
+position = Vector2(2863, 1609)
+
+[node name="TestEnemy3" parent="." instance=ExtResource("4_fwlqq")]
+position = Vector2(2641, 203)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_2cljb")
+
+[node name="Collisions" type="StaticBody2D" parent="NavigationRegion2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+polygon = PackedVector2Array(-56, -63, 3072, -60, 3082, 3045, -50, 3048, -53, 233, 45, 290, 616, 354, 721, 384, 980, 377, 1074, 401, 1161, 458, 1178, 502, 1461, 599, 1599, 680, 1609, 798, 1588, 865, 1494, 905, 1383, 892, 1181, 821, 996, 700, 21, 922, 18, 2917, 88, 2991, 630, 2994, 569, 2816, 438, 2584, 431, 2416, 559, 2126, 492, 1827, 398, 1645, 401, 1568, 505, 1511, 650, 1507, 832, 1551, 1050, 1612, 1114, 1699, 1037, 1867, 946, 2032, 892, 2190, 959, 2493, 1161, 2816, 1390, 2991, 2046, 2991, 2117, 2964, 2164, 2833, 2160, 2483, 2419, 2490, 2426, 2937, 2550, 3004, 2587, 3021, 2887, 3011, 2998, 2883, 2991, 2382, 2964, 2301, 2769, 2217, 2507, 2200, 2154, 2194, 2154, 1968, 2920, 1965, 2991, 1901, 2994, 1847, 2998, 1386, 2867, 1410, 2789, 1491, 2739, 1602, 2631, 1709, 2547, 1763, 2446, 1743, 2426, 1639, 2480, 1541, 2574, 1494, 2789, 1248, 2853, 1221, 2998, 1211, 2998, 888, 2698, 851, 2537, 804, 2487, 730, 2470, 633, 2527, 569, 2668, 461, 2806, 421, 2998, 411, 2998, 219, 2937, 111, 2823, 34, 2762, 7, 2127, 4, 2133, 81, 2154, 172, 2150, 249, 2180, 374, 2231, 545, 2248, 623, 2231, 707, 2187, 754, 2100, 771, 1995, 747, 1911, 626, 1868, 522, 1861, 259, 1831, 88, 1807, 7, 290, 7, -16, 74, -100, 253)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+polygon = PackedVector2Array(1368, 2194, 1491, 2112, 1547, 2099, 1682, 2123, 1742, 2153, 1784, 2217, 1781, 2266, 1728, 2302, 1612, 2337, 1482, 2321, 1395, 2285, 1361, 2242)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+polygon = PackedVector2Array(2473, 1046, 2531, 996, 2582, 999, 2645, 1025, 2661, 1087, 2631, 1149, 2583, 1170, 2525, 1159, 2480, 1115)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+polygon = PackedVector2Array(762, 1092, 827, 1013, 873, 989, 946, 992, 1005, 1013, 1045, 1061, 1052, 1111, 1012, 1180, 970, 1221, 883, 1227, 806, 1196, 752, 1143)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
+polygon = PackedVector2Array(1564, 1529, 1619, 1535, 2111, 1521, 2182, 1491, 2224, 1436, 2261, 1351, 2278, 1227, 2257, 1132, 2176, 1054, 2053, 1029, 1845, 1015, 1680, 1032, 1571, 1075, 1506, 1153, 1459, 1264, 1449, 1354, 1486, 1443)

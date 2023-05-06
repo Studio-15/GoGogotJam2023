@@ -21,6 +21,12 @@ Enums="*res://Singletons/Enums.gd"
 Statistics="*res://Singletons/Statistics.gd"
 EventBus="*res://Singletons/EventBus.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+
 [input]
 
 move_left={
