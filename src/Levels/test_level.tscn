@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://mpws8r23jqlv"]
+[gd_scene load_steps=6 format=3 uid="uid://mpws8r23jqlv"]
 
 [ext_resource type="Script" path="res://Levels/test_level.gd" id="1_2wh4b"]
 [ext_resource type="PackedScene" uid="uid://fmdallo5sfsh" path="res://Player/player.tscn" id="2_pskil"]
 [ext_resource type="Texture2D" uid="uid://xvrc2c5n28lv" path="res://Sprites/TestMap.png" id="2_se4v3"]
 [ext_resource type="PackedScene" uid="uid://ts63bn8v576m" path="res://Enemies/test_enemy.tscn" id="4_fwlqq"]
-[ext_resource type="Script" path="res://Camera/CamController.gd" id="5_ihsft"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2cljb"]
 
@@ -46,7 +45,3 @@ polygon = PackedVector2Array(762, 1092, 827, 1013, 873, 989, 946, 992, 1005, 101
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
 polygon = PackedVector2Array(1564, 1529, 1619, 1535, 2111, 1521, 2182, 1491, 2224, 1436, 2261, 1351, 2278, 1227, 2257, 1132, 2176, 1054, 2053, 1029, 1845, 1015, 1680, 1032, 1571, 1075, 1506, 1153, 1459, 1264, 1449, 1354, 1486, 1443)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-script = ExtResource("5_ihsft")
