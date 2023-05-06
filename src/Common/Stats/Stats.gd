@@ -2,6 +2,7 @@ extends Node
 
 class_name entity_stats
 
+
 @export var HEALTH: int = 10:
 	set(val):
 		HEALTH = val
