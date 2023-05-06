@@ -12,7 +12,6 @@ radius = 400.0
 
 [node name="TestEnemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
-collision_mask = 3
 script = ExtResource("1_jklcb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
