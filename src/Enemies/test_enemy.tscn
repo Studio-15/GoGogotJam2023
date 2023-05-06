@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ts63bn8v576m"]
+[gd_scene load_steps=5 format=3 uid="uid://ts63bn8v576m"]
 
 [ext_resource type="Script" path="res://Enemies/test_enemy.gd" id="1_jklcb"]
 [ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_6rfd5"]
+[ext_resource type="PackedScene" uid="uid://dsn2us7s8q813" path="res://Common/Stats/stats.tscn" id="3_tetya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqtwm"]
 size = Vector2(120, 122)
@@ -17,3 +18,5 @@ texture = ExtResource("2_6rfd5")
 shape = SubResource("RectangleShape2D_pqtwm")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Stats" parent="." instance=ExtResource("3_tetya")]
