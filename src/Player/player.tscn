@@ -1,11 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://fmdallo5sfsh"]
+[gd_scene load_steps=9 format=3 uid="uid://fmdallo5sfsh"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_182ba"]
 [ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_mwm4e"]
 [ext_resource type="PackedScene" uid="uid://dsn2us7s8q813" path="res://Common/Stats/stats.tscn" id="3_sx0sr"]
+[ext_resource type="Shader" path="res://Player/player.gdshader" id="4_4rd78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gb3s1"]
 size = Vector2(120, 116)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ionl7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ge0bc"]
+seamless = true
+noise = SubResource("FastNoiseLite_ionl7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7r4go"]
+shader = ExtResource("4_4rd78")
+shader_parameter/scroll = Vector2(0.007, 0.007)
+shader_parameter/albedoBG = Color(0.662745, 0.505882, 0.282353, 1)
+shader_parameter/max_dist = 0.075
+shader_parameter/player_pos = null
+shader_parameter/noise = SubResource("NoiseTexture2D_ge0bc")
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -18,8 +33,14 @@ texture = ExtResource("2_mwm4e")
 shape = SubResource("RectangleShape2D_gb3s1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 process_callback = 0
 position_smoothing_enabled = true
 
 [node name="Stats" parent="." instance=ExtResource("3_sx0sr")]
 MOVE_SPEED = 550
+
+[node name="FoW" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7r4go")
+scale = Vector2(41.2969, 40.3594)
+texture = ExtResource("2_mwm4e")

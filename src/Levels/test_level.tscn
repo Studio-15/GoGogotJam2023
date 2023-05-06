@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://mpws8r23jqlv"]
+[gd_scene load_steps=8 format=3 uid="uid://mpws8r23jqlv"]
 
 [ext_resource type="Script" path="res://Levels/test_level.gd" id="1_2wh4b"]
 [ext_resource type="PackedScene" uid="uid://fmdallo5sfsh" path="res://Player/player.tscn" id="2_pskil"]
 [ext_resource type="Texture2D" uid="uid://xvrc2c5n28lv" path="res://Sprites/TestMap.png" id="2_se4v3"]
+[ext_resource type="Texture2D" uid="uid://tuv56ps5f3x1" path="res://Sprites/Dot.png" id="2_x1t2r"]
 [ext_resource type="PackedScene" uid="uid://ts63bn8v576m" path="res://Enemies/test_enemy.tscn" id="4_fwlqq"]
 [ext_resource type="PackedScene" uid="uid://cb015iv5pglmx" path="res://Abilities/SpikeTrap/spike_trap.tscn" id="5_6ykrp"]
 
@@ -13,6 +14,12 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(2881, 2952, 2935, 2863,
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_2wh4b")
+
+[node name="BackGround" type="Sprite2D" parent="."]
+modulate = Color(0.0627451, 0.431373, 0.054902, 1)
+position = Vector2(1438.5, 1408.5)
+scale = Vector2(10843, 7823)
+texture = ExtResource("2_x1t2r")
 
 [node name="TestMap" type="Sprite2D" parent="."]
 position = Vector2(1505, 1502)
@@ -31,6 +38,7 @@ position = Vector2(2644, 2349)
 position = Vector2(2641, 203)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_2cljb")
 
 [node name="Collisions" type="StaticBody2D" parent="NavigationRegion2D"]
