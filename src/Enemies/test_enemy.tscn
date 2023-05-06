@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ts63bn8v576m"]
+[gd_scene load_steps=6 format=3 uid="uid://ts63bn8v576m"]
 
 [ext_resource type="Script" path="res://Enemies/test_enemy.gd" id="1_jklcb"]
 [ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_6rfd5"]
@@ -7,7 +7,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqtwm"]
 size = Vector2(120, 122)
 
-[node name="TestEnemy" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8gno"]
+radius = 400.0
+
+[node name="TestEnemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_jklcb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,5 +21,22 @@ texture = ExtResource("2_6rfd5")
 shape = SubResource("RectangleShape2D_pqtwm")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 50.0
+target_desired_distance = 50.0
+path_max_distance = 250.0
+avoidance_enabled = true
+radius = 50.0
+debug_enabled = true
+debug_path_custom_line_width = 2.0
 
 [node name="Stats" parent="." instance=ExtResource("3_tetya")]
+MOVE_SPEED = 200
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_k8gno")
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
