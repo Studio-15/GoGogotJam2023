@@ -6,6 +6,9 @@ extends CharacterBody2D
 var target: CharacterBody2D
 var pause: bool = false
 
+func _ready() -> void:
+	nav_agent.max_speed = stats.MOVE_SPEED
+
 
 func _physics_process(delta: float) -> void:
 	if pause:
@@ -32,6 +35,7 @@ func _on_navigation_agent_2d_target_reached() -> void:
 	pause = true
 	target.take_damage(stats.ATTACK)
 	await get_tree().create_timer(stats.ATTACK_COOLDOWN).timeout
+	velocity = Vector2.ZERO
 	pause = false
 
 
@@ -41,5 +45,5 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
-	velocity = velocity.move_toward(safe_velocity, 0.9)
+	velocity = safe_velocity
 	move_and_slide()

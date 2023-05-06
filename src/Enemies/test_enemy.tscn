@@ -23,16 +23,19 @@ texture = ExtResource("2_6rfd5")
 shape = SubResource("RectangleShape2D_pqtwm")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 50.0
-target_desired_distance = 50.0
+path_desired_distance = 100.0
+target_desired_distance = 100.0
 path_max_distance = 250.0
 avoidance_enabled = true
 radius = 50.0
+max_speed = 1000.0
 debug_enabled = true
 debug_path_custom_line_width = 2.0
 
 [node name="Stats" parent="." instance=ExtResource("3_tetya")]
-MOVE_SPEED = 200
+MOVE_SPEED = 500
+ATTACK = 1
+ATTACK_COOLDOWN = 2
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0
