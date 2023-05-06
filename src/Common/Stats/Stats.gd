@@ -14,3 +14,4 @@ class_name entity_stats
 
 func take_damage(val: int):
 	HEALTH -= val
+	print(get_parent().name, " lost ", val, " hp, new hp: ", HEALTH)

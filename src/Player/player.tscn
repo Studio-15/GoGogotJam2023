@@ -21,4 +21,4 @@ process_callback = 0
 position_smoothing_enabled = true
 
 [node name="Stats" parent="." instance=ExtResource("3_sx0sr")]
-MOVE_SPEED = 300
+MOVE_SPEED = 550
