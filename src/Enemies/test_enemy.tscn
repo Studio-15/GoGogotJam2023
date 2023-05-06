@@ -11,6 +11,7 @@ size = Vector2(120, 122)
 radius = 400.0
 
 [node name="TestEnemy" type="CharacterBody2D" groups=["Enemy"]]
+z_index = 40
 collision_layer = 4
 script = ExtResource("1_jklcb")
 

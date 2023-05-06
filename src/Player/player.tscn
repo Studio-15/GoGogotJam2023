@@ -23,6 +23,7 @@ shader_parameter/player_pos = null
 shader_parameter/noise = SubResource("NoiseTexture2D_ge0bc")
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 50
 collision_layer = 2
 script = ExtResource("1_182ba")
 
