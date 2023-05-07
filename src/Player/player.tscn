@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6411dt5hll6"]
+[gd_scene load_steps=10 format=3 uid="uid://fmdallo5sfsh"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_182ba"]
 [ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_mwm4e"]
@@ -43,6 +43,7 @@ position_smoothing_enabled = true
 MOVE_SPEED = 550
 
 [node name="FoW" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_7r4go")
 scale = Vector2(41.2969, 40.3594)
 texture = ExtResource("2_mwm4e")

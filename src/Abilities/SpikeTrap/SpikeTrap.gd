@@ -21,9 +21,9 @@ func attack(enemy):
 
 func _on_attack_cooldown_timeout() -> void:
 	is_ready = true
-	
+
 	var enemies_in_attack_zone = $Area2D.get_overlapping_bodies()
-	
+
 	for enemy in enemies_in_attack_zone:
 		attack(enemy)
 
