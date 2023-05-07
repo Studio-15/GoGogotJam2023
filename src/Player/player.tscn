@@ -19,7 +19,7 @@ noise = SubResource("FastNoiseLite_ionl7")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7r4go"]
 shader = ExtResource("4_4rd78")
 shader_parameter/scroll = Vector2(0.007, 0.007)
-shader_parameter/albedoBG = Color(0.662745, 0.505882, 0.282353, 1)
+shader_parameter/albedoBG = Color(0.658824, 0.662745, 0.635294, 1)
 shader_parameter/max_dist = 0.075
 shader_parameter/player_pos = null
 shader_parameter/noise = SubResource("NoiseTexture2D_ge0bc")
