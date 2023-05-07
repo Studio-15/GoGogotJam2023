@@ -10,7 +10,6 @@ extends Node
 
 
 func _ready() -> void:
-	print("Poison")
 	endTimer.wait_time = duration
 	tickTimer.wait_time = tickDuration
 
@@ -27,7 +26,6 @@ func _ready() -> void:
 
 
 func on_tick_timer_end():
-	print("Tick")
 	parent.take_damage(damage)
 
 

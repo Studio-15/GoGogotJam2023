@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfvclkpvjg1if"]
+
+[ext_resource type="Script" path="res://Common/HealthBar/DamageNumbers.gd" id="1_q152u"]
+[ext_resource type="FontFile" uid="uid://4juf0igj5bik" path="res://Fonts/DarumadropOne-Regular.ttf" id="2_gyb7i"]
+
+[sub_resource type="Animation" id="Animation_s3rpf"]
+length = 0.001
+loop_mode = 2
+step = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dhnxd"]
+resource_name = "damageNumbers"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vfv4j"]
+_data = {
+"RESET": SubResource("Animation_s3rpf"),
+"damageNumbers": SubResource("Animation_dhnxd")
+}
+
+[node name="DamageNumbers" type="RigidBody2D"]
+gravity_scale = 0.1
+script = ExtResource("1_q152u")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 53.0
+offset_bottom = 27.0
+scale = Vector2(1.04775, 0.99453)
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_gyb7i")
+theme_override_font_sizes/font_size = 50
+text = "123456"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "damageNumbers"
+libraries = {
+"": SubResource("AnimationLibrary_vfv4j")
+}
