@@ -26,8 +26,8 @@ shader_parameter/noise = SubResource("NoiseTexture2D_ge0bc")
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 50
-disable_mode = 1
 collision_layer = 2
+motion_mode = 1
 script = ExtResource("1_182ba")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -54,3 +54,7 @@ texture = ExtResource("2_mwm4e")
 
 [node name="HealthBar" parent="." instance=ExtResource("6_hbhbo")]
 position = Vector2(0, -90)
+
+[node name="DashCooldown" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
