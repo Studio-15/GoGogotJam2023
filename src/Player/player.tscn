@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6411dt5hll6"]
+[gd_scene load_steps=12 format=3 uid="uid://b6411dt5hll6"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_182ba"]
+[ext_resource type="Texture2D" uid="uid://b1wtwuxy4ic00" path="res://Sprites/Player walk up.png" id="2_2cp7m"]
 [ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_mwm4e"]
 [ext_resource type="PackedScene" uid="uid://dsn2us7s8q813" path="res://Common/Stats/stats.tscn" id="3_sx0sr"]
 [ext_resource type="Shader" path="res://Player/player.gdshader" id="4_4rd78"]
 [ext_resource type="PackedScene" uid="uid://b6rj6ywmq7frq" path="res://Abilities/GaleForce/gale_force.tscn" id="5_cum0s"]
 [ext_resource type="PackedScene" uid="uid://c4thackdffuk5" path="res://Common/HealthBar/health_bar.tscn" id="6_hbhbo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb3s1"]
-size = Vector2(120, 116)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y0ix5"]
+radius = 81.0
+height = 242.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ionl7"]
 
@@ -30,10 +32,12 @@ collision_layer = 2
 script = ExtResource("1_182ba")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_mwm4e")
+texture = ExtResource("2_2cp7m")
+region_enabled = true
+region_rect = Rect2(0, 0, 250, 250)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_gb3s1")
+shape = SubResource("CapsuleShape2D_y0ix5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
@@ -50,6 +54,7 @@ scale = Vector2(41.2969, 40.3594)
 texture = ExtResource("2_mwm4e")
 
 [node name="Gale" parent="." instance=ExtResource("5_cum0s")]
+visible = false
 
 [node name="HealthBar" parent="." instance=ExtResource("6_hbhbo")]
 position = Vector2(0, -90)

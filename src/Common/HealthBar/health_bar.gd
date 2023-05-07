@@ -17,6 +17,6 @@ func set_current_health(val: int):
 	var damage_numbers = Damage_numbers.instantiate()
 	damage_numbers.set_number($ProgressBar.value - val)
 	add_child(damage_numbers)
-	
+
 	var TW = create_tween()
 	TW.tween_property($ProgressBar, "value", val, 0.2)
