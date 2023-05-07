@@ -3,6 +3,7 @@ extends Node2D
 @onready var timeoutTimer: Timer = Timer.new()
 @onready var poison_prefab = load("res://Abilities/Afflictions/Poison/poison.tscn")
 
+@export var should_timeout: bool = false
 @export var duration: float = 20.0
 @export var poison_damage: int = 1
 @export var poison_ticks: int = 5
@@ -11,10 +12,11 @@ extends Node2D
 
 
 func _ready() -> void:
-	timeoutTimer.wait_time = duration
-	add_child(timeoutTimer)
-	timeoutTimer.timeout.connect(on_timeout_timer_end)
-	timeoutTimer.start()
+	if should_timeout:
+		timeoutTimer.wait_time = duration
+		add_child(timeoutTimer)
+		timeoutTimer.timeout.connect(on_timeout_timer_end)
+		timeoutTimer.start()
 
 func on_timeout_timer_end():
 	queue_free()

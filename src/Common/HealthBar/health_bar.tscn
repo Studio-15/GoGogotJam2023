@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4thackdffuk5"]
+
+[ext_resource type="Script" path="res://Common/HealthBar/health_bar.gd" id="1_pfeyr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmhbh"]
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv6pj"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buoll"]
+bg_color = Color(0.0156863, 0.6, 0, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+
+[node name="HealthBar" type="Node2D"]
+script = ExtResource("1_pfeyr")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -52.0
+offset_top = -12.0
+offset_right = 52.0
+offset_bottom = 12.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dmhbh")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -50.0
+offset_top = -10.0
+offset_right = 50.0
+offset_bottom = 10.0
+theme_override_styles/background = SubResource("StyleBoxFlat_uv6pj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_buoll")
+value = 50.0
+show_percentage = false

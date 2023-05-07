@@ -3,8 +3,8 @@ extends Node2D
 
 var spriteReady: CompressedTexture2D = load('res://Abilities/SpikeTrap/Spiketrap 1.png')
 var spriteActive: CompressedTexture2D = load('res://Abilities/SpikeTrap/Spiketrap 2.png')
-var damage: int = 5
-var is_ready: bool = true
+@export var damage: int = 5
+@export var is_ready: bool = true
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
