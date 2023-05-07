@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Enemy
 
 
 @onready var stats: entity_stats = $Stats
@@ -41,8 +41,3 @@ func _on_navigation_agent_2d_target_reached() -> void:
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		target = body
-
-
-func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
-	velocity = safe_velocity
-	move_and_slide()

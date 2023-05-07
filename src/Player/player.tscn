@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://fmdallo5sfsh"]
+[gd_scene load_steps=10 format=3 uid="uid://b6411dt5hll6"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_182ba"]
 [ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_mwm4e"]
 [ext_resource type="PackedScene" uid="uid://dsn2us7s8q813" path="res://Common/Stats/stats.tscn" id="3_sx0sr"]
 [ext_resource type="Shader" path="res://Player/player.gdshader" id="4_4rd78"]
+[ext_resource type="PackedScene" uid="uid://b6rj6ywmq7frq" path="res://Abilities/GaleForce/gale_force.tscn" id="5_cum0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gb3s1"]
 size = Vector2(120, 116)
@@ -45,3 +46,5 @@ MOVE_SPEED = 550
 material = SubResource("ShaderMaterial_7r4go")
 scale = Vector2(41.2969, 40.3594)
 texture = ExtResource("2_mwm4e")
+
+[node name="Gale" parent="." instance=ExtResource("5_cum0s")]
