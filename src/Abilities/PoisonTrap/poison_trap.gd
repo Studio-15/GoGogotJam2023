@@ -5,6 +5,7 @@ extends Trap
 @export var should_timeout: bool = false
 @export var duration: float = 20.0
 @export var poison_ticks: int = 5
+@export var poison_damage: int = 1
 @export var trap_durability: int = 3
 
 
@@ -24,7 +25,7 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") or body.is_in_group("Enemy"):
 		var poison_instance = poison_prefab.instantiate()
 		poison_instance.duration = poison_ticks
-		poison_instance.damage = damage
+		poison_instance.damage = poison_damage
 		body.add_child(poison_instance)
 		trap_durability -= 1
 		if trap_durability < 1:
