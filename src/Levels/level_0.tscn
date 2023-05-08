@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://k8che7e4n3xx"]
+
+[ext_resource type="Script" path="res://Levels/level_0.gd" id="1_53wp8"]
+[ext_resource type="PackedScene" uid="uid://c62ataft5au56" path="res://Levels/AccessPoints/entry_point.tscn" id="2_l56m1"]
+[ext_resource type="PackedScene" uid="uid://dcsbik7av74p1" path="res://Levels/AccessPoints/exit_point.tscn" id="3_rhkj7"]
+[ext_resource type="Texture2D" uid="uid://tuv56ps5f3x1" path="res://Sprites/Dot.png" id="4_8o6if"]
+
+[node name="Level_0" type="Node2D"]
+position = Vector2(612, 420)
+script = ExtResource("1_53wp8")
+
+[node name="EntryPoint" parent="." instance=ExtResource("2_l56m1")]
+position = Vector2(0, 171)
+
+[node name="ExitPoint" parent="." instance=ExtResource("3_rhkj7")]
+position = Vector2(1, -309)
+next_scene = 2
+
+[node name="Dot" type="Sprite2D" parent="."]
+position = Vector2(269.25, -62.25)
+scale = Vector2(71.5, 180.5)
+texture = ExtResource("4_8o6if")
