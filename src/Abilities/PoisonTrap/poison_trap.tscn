@@ -9,6 +9,7 @@ radius = 31.0161
 [node name="PoisonTrap" type="Node2D"]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_kh20a")
+damage = 1
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_mask = 6
