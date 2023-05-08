@@ -3,6 +3,12 @@ extends Trap
 
 var spriteReady: CompressedTexture2D = load('res://Abilities/SpikeTrap/Spiketrap 1.png')
 var spriteActive: CompressedTexture2D = load('res://Abilities/SpikeTrap/Spiketrap 2.png')
+@onready var attack_cooldown: Timer = $AttackCooldown
+
+
+func _ready() -> void:
+	attack_cooldown.wait_time = cooldown_after_setup
+	attack_cooldown.start()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -19,6 +25,7 @@ func attack(enemy):
 
 func _on_attack_cooldown_timeout() -> void:
 	is_ready = true
+	attack_cooldown.wait_time = cooldown
 
 	var enemies_in_attack_zone = $Area2D.get_overlapping_bodies()
 
@@ -27,5 +34,5 @@ func _on_attack_cooldown_timeout() -> void:
 
 
 func _on_retract_cooldown_timeout() -> void:
-	$AttackCooldown.start()
+	attack_cooldown.start()
 	$Sprite2D.texture = spriteReady

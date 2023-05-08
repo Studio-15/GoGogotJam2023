@@ -6,6 +6,7 @@ extends Enemy
 var target: CharacterBody2D
 var pause: bool = false
 
+
 func _ready() -> void:
 	nav_agent.max_speed = stats.MOVE_SPEED
 

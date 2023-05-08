@@ -31,7 +31,7 @@ texture = ExtResource("2_se4v3")
 position = Vector2(232, 2837)
 
 [node name="TestEnemy2" parent="." instance=ExtResource("4_fwlqq")]
-position = Vector2(2644, 2349)
+position = Vector2(2456, 2319)
 
 [node name="TestEnemy3" parent="." instance=ExtResource("4_fwlqq")]
 position = Vector2(2641, 203)

@@ -11,6 +11,7 @@ z_as_relative = false
 scale = Vector2(3, 3)
 script = ExtResource("1_1pqny")
 damage = 5
+is_ready = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ibaxa")
