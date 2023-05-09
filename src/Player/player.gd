@@ -30,14 +30,14 @@ func move(delta) -> void:
 	var velocity_x = Input.get_action_raw_strength("move_right") - Input.get_action_raw_strength("move_left")
 	var velocity_y = Input.get_action_raw_strength("move_down") - Input.get_action_raw_strength("move_up")
 
-	if Input.get_action_raw_strength("move_right"):
-		animation_player.play('move_right')
-	elif Input.get_action_raw_strength("move_left"):
-		animation_player.play('move_left')
-	elif Input.get_action_raw_strength("move_down"):
+	if Input.get_action_raw_strength("move_down"):
 		animation_player.play('move_down')
 	elif Input.get_action_raw_strength("move_up"):
 		animation_player.play('move_up')
+	elif Input.get_action_raw_strength("move_right"):
+		animation_player.play('move_right')
+	elif Input.get_action_raw_strength("move_left"):
+		animation_player.play('move_left')
 	else:
 		animation_player.play('RESET')
 

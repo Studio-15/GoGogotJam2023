@@ -9,6 +9,7 @@ var pause: bool = false
 
 func _ready() -> void:
 	nav_agent.max_speed = stats.MOVE_SPEED
+	build_trap(1, 1)
 
 
 func _physics_process(delta: float) -> void:

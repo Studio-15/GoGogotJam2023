@@ -27,9 +27,10 @@ func build_trap(build_time, cooldown_after_setup):
 
 func _on_build_trap(cooldown_after_setup):
 	var trap = load([
-		'res://Abilities/SpikeTrap/spike_trap.tscn'
+		'res://Abilities/SpikeTrap/spike_trap.tscn',
+		'res://Abilities/PoisonTrap/poison_trap.tscn'
 	].pick_random()).instantiate()
 	
 	trap.cooldown_after_setup = cooldown_after_setup
-	trap.position = global_position
+	trap.position = position + $Sprite2D.texture.get_size()
 	get_parent().add_child(trap)
