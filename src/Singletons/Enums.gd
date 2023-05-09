@@ -4,7 +4,8 @@ extends Node
 enum ENEMY_STATE {
 	IDLE,
 	CHASING,
-	ENRAGED
+	ENRAGED,
+	TRAPPING,
 }
 
 enum ENEMY_TYPE {

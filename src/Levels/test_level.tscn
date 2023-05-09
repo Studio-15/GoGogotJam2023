@@ -74,3 +74,8 @@ prev_scene = 2
 position = Vector2(59, 172)
 rotation = 1.57079
 next_scene = 4
+
+[node name="TestEnemy4" parent="." instance=ExtResource("4_fwlqq")]
+position = Vector2(2271, 2330)
+
+[node name="Timer" type="Timer" parent="."]

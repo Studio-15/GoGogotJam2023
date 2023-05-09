@@ -17,10 +17,15 @@ var idle_points: Array = []
 var next_idle_location: int = 0
 
 
+func _enter_tree() -> void:
+	_super()
+
+
 func _ready() -> void:
 	nav_agent.max_speed = stats.MOVE_SPEED
 	set_idle_points()
 	current_state = Enums.ENEMY_STATE.IDLE
+	build_trap(1)
 
 
 func _physics_process(delta: float) -> void:
