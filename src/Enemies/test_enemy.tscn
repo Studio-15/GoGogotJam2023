@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ts63bn8v576m"]
+[gd_scene load_steps=8 format=3 uid="uid://ts63bn8v576m"]
 
 [ext_resource type="Script" path="res://Enemies/test_enemy.gd" id="1_jklcb"]
 [ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_6rfd5"]
@@ -10,6 +10,9 @@ size = Vector2(120, 122)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8gno"]
 radius = 400.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkym4"]
+radius = 267.081
 
 [node name="TestEnemy" type="CharacterBody2D" groups=["Enemy"]]
 z_index = 40
@@ -47,6 +50,12 @@ shape = SubResource("CircleShape2D_k8gno")
 
 [node name="HealthBar" parent="." instance=ExtResource("4_4oxjm")]
 position = Vector2(0, -91)
+
+[node name="DistractionArea" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DistractionArea"]
+shape = SubResource("CircleShape2D_vkym4")
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

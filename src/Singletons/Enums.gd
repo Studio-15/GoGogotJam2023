@@ -1,1 +1,15 @@
 extends Node
+
+
+enum ENEMY_STATE {
+	IDLE,
+	CHASING,
+	ENRAGED
+}
+
+enum ENEMY_TYPE {
+	RUNNER,
+	SHOOTER,
+	TANK,
+	TRAPPER
+}
