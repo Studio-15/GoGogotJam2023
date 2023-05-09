@@ -1,12 +1,96 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6411dt5hll6"]
+[gd_scene load_steps=18 format=3 uid="uid://ct10mvdrj3dnt"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_182ba"]
-[ext_resource type="Texture2D" uid="uid://b1wtwuxy4ic00" path="res://Sprites/Player walk up.png" id="2_2cp7m"]
+[ext_resource type="Texture2D" uid="uid://cwl3bxbky4r4b" path="res://Player/pw.png" id="2_1tt48"]
 [ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_mwm4e"]
 [ext_resource type="PackedScene" uid="uid://dsn2us7s8q813" path="res://Common/Stats/stats.tscn" id="3_sx0sr"]
 [ext_resource type="Shader" path="res://Player/player.gdshader" id="4_4rd78"]
 [ext_resource type="PackedScene" uid="uid://b6rj6ywmq7frq" path="res://Abilities/GaleForce/gale_force.tscn" id="5_cum0s"]
 [ext_resource type="PackedScene" uid="uid://c4thackdffuk5" path="res://Common/HealthBar/health_bar.tscn" id="6_hbhbo"]
+
+[sub_resource type="Animation" id="Animation_sdvpj"]
+resource_name = "move_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_kqscc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3h8ho"]
+resource_name = "move_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_fyty1"]
+resource_name = "move_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_oh08a"]
+resource_name = "move_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [12, 13, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltbxn"]
+_data = {
+"RESET": SubResource("Animation_kqscc"),
+"move_down": SubResource("Animation_oh08a"),
+"move_left": SubResource("Animation_3h8ho"),
+"move_right": SubResource("Animation_sdvpj"),
+"move_up": SubResource("Animation_fyty1")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y0ix5"]
 radius = 81.0
@@ -33,11 +117,17 @@ motion_mode = 1
 script = ExtResource("1_182ba")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_2cp7m")
-region_enabled = true
-region_rect = Rect2(0, 0, 250, 250)
+texture = ExtResource("2_1tt48")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ltbxn")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_y0ix5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -58,7 +148,7 @@ texture = ExtResource("2_mwm4e")
 visible = false
 
 [node name="HealthBar" parent="." instance=ExtResource("6_hbhbo")]
-position = Vector2(0, -90)
+position = Vector2(0, -152)
 
 [node name="DashCooldown" type="Timer" parent="."]
 wait_time = 5.0

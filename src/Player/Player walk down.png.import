@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blium3fqqpluq"
-path="res://.godot/imported/Player walk down.png-9126804e2b92dea0567e92d76ceb6257.ctex"
+path="res://.godot/imported/Player walk down.png-096f46031abd8add78aff2d96e633017.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player walk down.png"
-dest_files=["res://.godot/imported/Player walk down.png-9126804e2b92dea0567e92d76ceb6257.ctex"]
+source_file="res://Player/Player walk down.png"
+dest_files=["res://.godot/imported/Player walk down.png-096f46031abd8add78aff2d96e633017.ctex"]
 
 [params]
 

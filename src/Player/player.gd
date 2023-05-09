@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var stats: entity_stats = $Stats
 @onready var dash_cooldown: Timer = $DashCooldown
+@onready var animation_player: AnimationPlayer = $Sprite2D/AnimationPlayer
 
 
 var is_dashing: bool = false
@@ -29,6 +30,17 @@ func move(delta) -> void:
 	var velocity_x = Input.get_action_raw_strength("move_right") - Input.get_action_raw_strength("move_left")
 	var velocity_y = Input.get_action_raw_strength("move_down") - Input.get_action_raw_strength("move_up")
 
+	if Input.get_action_raw_strength("move_right"):
+		animation_player.play('move_right')
+	elif Input.get_action_raw_strength("move_left"):
+		animation_player.play('move_left')
+	elif Input.get_action_raw_strength("move_down"):
+		animation_player.play('move_down')
+	elif Input.get_action_raw_strength("move_up"):
+		animation_player.play('move_up')
+	else:
+		animation_player.play('RESET')
+
 	if Input.is_action_just_pressed('dash') and dash_cooldown.is_stopped():
 		dash_cooldown.start()
 		velocity = get_local_mouse_position()
@@ -41,5 +53,5 @@ func move(delta) -> void:
 		velocity *= stats.MOVE_SPEED * 3
 	else:
 		velocity = Vector2(velocity_x, velocity_y) * stats.MOVE_SPEED
-
+	
 	move_and_slide()
