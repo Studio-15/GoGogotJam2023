@@ -39,7 +39,7 @@ debug_path_custom_line_width = 2.0
 [node name="Stats" parent="." instance=ExtResource("3_tetya")]
 MOVE_SPEED = 500
 ATTACK = 1
-ATTACK_COOLDOWN = 2
+ATTACK_COOLDOWN = 0.3
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0

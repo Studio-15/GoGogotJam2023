@@ -10,7 +10,7 @@ class_name entity_stats
 			get_parent().on_death()
 @export var MOVE_SPEED: int = 10
 @export var ATTACK: int = 10
-@export var ATTACK_COOLDOWN: int = 10
+@export var ATTACK_COOLDOWN: float = 10.0
 
 
 func take_damage(val: int):

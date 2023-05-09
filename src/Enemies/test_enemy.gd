@@ -6,7 +6,13 @@ extends Enemy
 @onready var rng = RandomNumberGenerator.new()
 var target: CharacterBody2D
 var pause: bool = false
-var current_state: Enums.ENEMY_STATE = Enums.ENEMY_STATE.IDLE
+var current_state: Enums.ENEMY_STATE = Enums.ENEMY_STATE.IDLE:
+	set(val):
+		current_state = val
+		if val == Enums.ENEMY_STATE.IDLE:
+			nav_agent.target_desired_distance = 10
+		else:
+			nav_agent.target_desired_distance = 135
 var idle_points: Array = []
 var next_idle_location: int = 0
 
@@ -14,6 +20,7 @@ var next_idle_location: int = 0
 func _ready() -> void:
 	nav_agent.max_speed = stats.MOVE_SPEED
 	set_idle_points()
+	current_state = Enums.ENEMY_STATE.IDLE
 
 
 func _physics_process(delta: float) -> void:
@@ -55,22 +62,22 @@ func handle_state():
 
 func set_idle_points():
 	idle_points = [
-		global_position + (Vector2(1,0) * 50),
-		global_position + (Vector2(1,1) * 50),
-		global_position + (Vector2(0,1) * 50),
-		global_position + (Vector2(1,-1) * 50),
-		global_position + (Vector2(0,-1) * 50),
-		global_position + (Vector2(-1,-1) * 50),
-		global_position + (Vector2(-1,0) * 50),
-		global_position + (Vector2(-1,1) * 50)
+		global_position + (Vector2(1,0) * 100),
+		global_position + (Vector2(1,1) * 100),
+		global_position + (Vector2(0,1) * 100),
+		global_position + (Vector2(1,-1) * 100),
+		global_position + (Vector2(0,-1) * 100),
+		global_position + (Vector2(-1,-1) * 100),
+		global_position + (Vector2(-1,0) * 100),
+		global_position + (Vector2(-1,1) * 100),
+		global_position
 	]
 
 
 func chase():
-	if target:
-		var next_loc = nav_agent.get_next_path_position()
-		var new_velocity = (next_loc - global_position).normalized() * stats.MOVE_SPEED
-		nav_agent.set_velocity(new_velocity)
+	var next_loc = nav_agent.get_next_path_position()
+	var new_velocity = (next_loc - global_position).normalized() * (stats.MOVE_SPEED / (1 if current_state != Enums.ENEMY_STATE.IDLE else 8))
+	nav_agent.set_velocity(new_velocity)
 
 
 func _on_navigation_agent_2d_target_reached() -> void:
@@ -83,6 +90,7 @@ func _on_navigation_agent_2d_target_reached() -> void:
 		pause = true
 		target.take_damage(stats.ATTACK)
 		await get_tree().create_timer(stats.ATTACK_COOLDOWN).timeout
+		print(stats.ATTACK_COOLDOWN)
 		velocity = Vector2.ZERO
 		pause = false
 		current_state = Enums.ENEMY_STATE.CHASING # Not sure if this is the intended behaviour we want, but lets test it out -> It goes full berserk mode until it hits the player, and then it can be distracted again.
