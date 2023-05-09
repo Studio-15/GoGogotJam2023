@@ -31,7 +31,7 @@ texture = ExtResource("2_se4v3")
 position = Vector2(232, 2837)
 
 [node name="TestEnemy2" parent="." instance=ExtResource("4_fwlqq")]
-position = Vector2(2456, 2319)
+position = Vector2(1554, 1792)
 
 [node name="TestEnemy3" parent="." instance=ExtResource("4_fwlqq")]
 position = Vector2(2641, 203)
@@ -61,10 +61,10 @@ polygon = PackedVector2Array(1564, 1529, 1619, 1535, 2111, 1521, 2182, 1491, 222
 position = Vector2(1778, 2730)
 
 [node name="PoisonTrap" parent="." instance=ExtResource("7_kvg28")]
-position = Vector2(1935, 2049)
+position = Vector2(1684, 2400)
 
 [node name="PoisonTrap2" parent="." instance=ExtResource("7_kvg28")]
-position = Vector2(1802, 2077)
+position = Vector2(1357, 2356)
 
 [node name="EntryPoint" parent="." instance=ExtResource("7_20aqs")]
 position = Vector2(2710, 2990)

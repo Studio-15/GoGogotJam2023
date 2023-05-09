@@ -53,5 +53,5 @@ func move(delta) -> void:
 		velocity *= stats.MOVE_SPEED * 3
 	else:
 		velocity = Vector2(velocity_x, velocity_y) * stats.MOVE_SPEED
-	
+
 	move_and_slide()

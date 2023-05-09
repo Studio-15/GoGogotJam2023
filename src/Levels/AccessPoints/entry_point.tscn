@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c62ataft5au56"]
 
 [ext_resource type="Script" path="res://Levels/AccessPoints/entry_point.gd" id="1_mbd72"]
-[ext_resource type="PackedScene" uid="uid://b6411dt5hll6" path="res://Player/player.tscn" id="2_pakoa"]
+[ext_resource type="PackedScene" uid="uid://ct10mvdrj3dnt" path="res://Player/player.tscn" id="2_pakoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpyoq"]
 size = Vector2(218, 20)
