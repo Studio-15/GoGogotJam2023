@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://otiuc674kyhc"
-path="res://.godot/imported/Grass tiles 2.png-8d12fda8683f27ad74b533ba5526daa4.ctex"
+uid="uid://bnrvx2tbndea3"
+path="res://.godot/imported/Cliff 1.png-a92d1b49db8dc1b1f27214d10838798d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tileset/Grass tiles 2.png"
-dest_files=["res://.godot/imported/Grass tiles 2.png-8d12fda8683f27ad74b533ba5526daa4.ctex"]
+source_file="res://Tileset/Cliff 1.png"
+dest_files=["res://.godot/imported/Cliff 1.png-a92d1b49db8dc1b1f27214d10838798d.ctex"]
 
 [params]
 
