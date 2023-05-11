@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi01oh27itonr"
-path="res://.godot/imported/Cliff 2.png-dffdab8de0a145a0fb3ee10adb3c6068.ctex"
+uid="uid://c0v3b1buccsk1"
+path="res://.godot/imported/Cliff A vFinal.png-f9816520d3b8fc50d1085db4c8e07ff7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tileset/Cliff 2.png"
-dest_files=["res://.godot/imported/Cliff 2.png-dffdab8de0a145a0fb3ee10adb3c6068.ctex"]
+source_file="res://Tileset/Cliff A vFinal.png"
+dest_files=["res://.godot/imported/Cliff A vFinal.png-f9816520d3b8fc50d1085db4c8e07ff7.ctex"]
 
 [params]
 
