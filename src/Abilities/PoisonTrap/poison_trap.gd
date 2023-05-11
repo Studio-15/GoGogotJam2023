@@ -21,6 +21,9 @@ func on_timeout_timer_end():
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		if body.current_state == Enums.ENEMY_STATE.IDLE:
+			return
 	if body.is_in_group("Player") or body.is_in_group("Enemy"):
 		var poison_instance = poison_prefab.instantiate()
 		poison_instance.duration = poison_ticks

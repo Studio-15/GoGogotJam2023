@@ -32,9 +32,9 @@ func _on_kill_zone_area_body_entered(body: Node2D) -> void:
 		body.pause = true
 		if kill_type == zone_type.cliff:
 			var TW_scale = create_tween()
-			TW_scale.tween_property(body, "scale", Vector2(0.2, 0.2), 3.0)
+			TW_scale.tween_property(body, "scale", Vector2(0.2, 0.2), 2.0)
 			var TW_pos = create_tween()
-			TW_pos.tween_property(body, "global_position", $KillMarker.global_position, 3.0)
+			TW_pos.tween_property(body, "global_position", $KillMarker.global_position, 2.0)
 			await TW_pos.finished
 			if !is_instance_valid(body):
 					return
@@ -44,7 +44,7 @@ func _on_kill_zone_area_body_entered(body: Node2D) -> void:
 			TW_pos.tween_property(body, "global_position", $KillMarker.global_position, 3.0)
 			var TW_modulate = create_tween()
 			TW_modulate.tween_property(body.get_node("Sprite2D"), "modulate", Color.BLUE, 2.0)
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(2.0).timeout
 			for i in range(0, body.get_node("Stats").HEALTH):
 				if !is_instance_valid(body):
 					return

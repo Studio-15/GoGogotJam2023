@@ -17,6 +17,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func attack(enemy):
+	if enemy.current_state == Enums.ENEMY_STATE.IDLE:
+		return
 	$Sprite2D.texture = spriteActive
 	$RetractCooldown.start()
 	enemy.take_damage(damage)

@@ -50,7 +50,6 @@ position = Vector2(1554, 1792)
 position = Vector2(2641, 203)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_2cljb")
 
 [node name="Collisions" type="StaticBody2D" parent="NavigationRegion2D"]
