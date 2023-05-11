@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ct10mvdrj3dnt"]
+[gd_scene load_steps=19 format=3 uid="uid://ct10mvdrj3dnt"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_182ba"]
 [ext_resource type="Texture2D" uid="uid://cwl3bxbky4r4b" path="res://Player/pw.png" id="2_1tt48"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://Player/player.gdshader" id="4_4rd78"]
 [ext_resource type="PackedScene" uid="uid://b6rj6ywmq7frq" path="res://Abilities/GaleForce/gale_force.tscn" id="5_cum0s"]
 [ext_resource type="PackedScene" uid="uid://c4thackdffuk5" path="res://Common/HealthBar/health_bar.tscn" id="6_hbhbo"]
+[ext_resource type="PackedScene" uid="uid://r7kjrwqvfjdq" path="res://Player/SceneSwitcher/scene_switcher.tscn" id="8_1wbv5"]
 
 [sub_resource type="Animation" id="Animation_kqscc"]
 length = 0.001
@@ -161,3 +162,5 @@ position = Vector2(0, -152)
 [node name="DashCooldown" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="SceneSwitcher" parent="." instance=ExtResource("8_1wbv5")]

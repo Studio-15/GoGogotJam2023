@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://r7kjrwqvfjdq"]
+
+[ext_resource type="Script" path="res://Player/SceneSwitcher/scene_switcher.gd" id="1_eqe3s"]
+[ext_resource type="Texture2D" uid="uid://tuv56ps5f3x1" path="res://Sprites/Dot.png" id="2_dy2nw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_at7l7"]
+
+[node name="SceneSwitcher" type="Node2D"]
+script = ExtResource("1_eqe3s")
+
+[node name="Container" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Container"]
+modulate = Color(0.14902, 0.317647, 0.141176, 1)
+material = SubResource("ShaderMaterial_at7l7")
+rotation = 0.523598
+scale = Vector2(4500, 4500)
+texture = ExtResource("2_dy2nw")

@@ -92,6 +92,8 @@ func _on_navigation_agent_2d_target_reached() -> void:
 		var randint = rng.randi_range(0, len(idle_points)-1)
 		next_idle_location = randint
 	elif current_state in [Enums.ENEMY_STATE.CHASING, Enums.ENEMY_STATE.ENRAGED]:
+		if !is_instance_valid(target):
+			return
 		pause = true
 		target.take_damage(stats.ATTACK)
 		await get_tree().create_timer(stats.ATTACK_COOLDOWN).timeout
