@@ -8,6 +8,7 @@ var duration: float = 0.5
 
 
 func _ready() -> void:
+	$Container/Sprite2D.visible = true
 	EventBus.load_new_scene_signal.connect(on_switch_scene)
 	EventBus.scene_loaded_signal.connect(on_scene_switched)
 	EventBus.scene_loaded()

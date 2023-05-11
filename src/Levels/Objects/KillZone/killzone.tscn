@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtmvmj4oyd3ho"]
+
+[ext_resource type="Script" path="res://Levels/Objects/KillZone/killzone.gd" id="1_s8get"]
+
+[node name="Killzone" type="Node2D"]
+script = ExtResource("1_s8get")
+
+[node name="KillZoneArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="KillMarker" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="KillZoneArea" to="." method="_on_kill_zone_area_body_entered"]

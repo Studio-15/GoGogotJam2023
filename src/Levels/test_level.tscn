@@ -1,18 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://mpws8r23jqlv"]
+[gd_scene load_steps=14 format=3 uid="uid://mpws8r23jqlv"]
 
 [ext_resource type="Script" path="res://Levels/test_level.gd" id="1_2wh4b"]
 [ext_resource type="Texture2D" uid="uid://xvrc2c5n28lv" path="res://Sprites/TestMap.png" id="2_se4v3"]
 [ext_resource type="Texture2D" uid="uid://tuv56ps5f3x1" path="res://Sprites/Dot.png" id="2_x1t2r"]
 [ext_resource type="PackedScene" uid="uid://ts63bn8v576m" path="res://Enemies/test_enemy.tscn" id="4_fwlqq"]
-[ext_resource type="PackedScene" uid="uid://cb015iv5pglmx" path="res://Abilities/SpikeTrap/spike_trap.tscn" id="5_6ykrp"]
 [ext_resource type="PackedScene" uid="uid://c62ataft5au56" path="res://Levels/AccessPoints/entry_point.tscn" id="7_20aqs"]
-[ext_resource type="PackedScene" uid="uid://dye4po3sma05" path="res://Abilities/PoisonTrap/poison_trap.tscn" id="7_kvg28"]
 [ext_resource type="PackedScene" uid="uid://dcsbik7av74p1" path="res://Levels/AccessPoints/exit_point.tscn" id="8_emd4c"]
+[ext_resource type="PackedScene" uid="uid://dtmvmj4oyd3ho" path="res://Levels/Objects/KillZone/killzone.tscn" id="9_moq82"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2cljb"]
 vertices = PackedVector2Array(2950, 938, 2951, 1161, 2843, 1174, 2706, 1117, 2706, 1025, 2338, 1281, 2339, 1159, 2432, 1135, 2478, 1187, 2554, 1438, 2432, 1491, 2751, 1219, 2641, 1207, 2562, 1224, 2871, 136, 2970, 371, 2786, 380, 2198, 50, 2875, 1450, 2963, 1434, 2948, 1838, 2796, 1631, 2695, 1747, 2903, 1917, 2655, 412, 2214, 260, 2509, 495, 2266, 422, 2418, 579, 2306, 609, 2406, 738, 2293, 757, 2685, 899, 2611, 946, 2493, 853, 2503, 955, 2201, 833, 516, 2822, 534, 2942, 71, 2942, 380, 2613, 368, 2389, 65, 974, 311, 1680, 1398, 1194, 1376, 1336, 1124, 1161, 1090, 1028, 2092, 1898, 2088, 2242, 1847, 2239, 1808, 2139, 2415, 1060, 2295, 1079, 759, 316, 47, 227, 33, 117, 332, 63, 1744, 63, 1074, 328, 1210, 392, 1798, 288, 1462, 516, 1284, 462, 1780, 521, 1668, 682, 1863, 693, 1738, 955, 1671, 806, 1963, 774, 1995, 961, 1102, 1529, 1005, 1286, 1453, 1536, 1206, 1687, 2922, 2342, 2935, 2863, 2881, 2952, 2589, 2955, 2465, 2911, 2485, 2436, 2714, 2272, 2110, 2425, 1784, 2343, 1572, 2388, 2090, 2904, 2024, 2958, 1436, 2952, 1220, 2784, 1367, 2332, 1011, 2476, 1313, 2244, 972, 2207, 1011, 2067, 1351, 2133, 1146, 1851, 1618, 1610, 1481, 2053, 2548, 1834, 2382, 1800, 2213, 1559, 2364, 1646, 2005, 1593, 1728, 2095, 1798, 1600, 1471, 970, 1471, 1082, 1265, 936, 2288, 1484, 2306, 1387, 1633, 2057, 719, 1416, 889, 1283, 762, 1253, 514, 1392, 684, 1151, 335, 1486, 2443, 996, 2224, 1000, 2081, 825, 1624, 907, 1584, 996, 1106, 852, 1022, 936, 989, 765, 828, 925, 719, 1011, 449, 1863, 498, 2116)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(3, 2, 11, 12), PackedInt32Array(12, 11, 9, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 21, 20, 23), PackedInt32Array(17, 16, 24, 25), PackedInt32Array(25, 24, 26, 27), PackedInt32Array(27, 26, 28, 29), PackedInt32Array(29, 28, 30, 31), PackedInt32Array(32, 0, 4, 33), PackedInt32Array(34, 32, 33, 35, 36), PackedInt32Array(37, 38, 39, 40), PackedInt32Array(41, 40, 39, 42, 43), PackedInt32Array(44, 45, 46, 47), PackedInt32Array(48, 49, 50, 51), PackedInt32Array(52, 7, 6, 53, 36), PackedInt32Array(54, 55, 56, 57, 58, 59), PackedInt32Array(60, 59, 58, 61), PackedInt32Array(62, 63, 60, 61, 64), PackedInt32Array(65, 62, 64, 66), PackedInt32Array(67, 68, 65, 66, 69, 70), PackedInt32Array(71, 72, 46, 45, 73, 74), PackedInt32Array(75, 76, 77, 78, 79, 80, 81), PackedInt32Array(50, 49, 81, 80, 82, 83), PackedInt32Array(84, 83, 82, 85, 86, 87, 88), PackedInt32Array(89, 84, 88, 90), PackedInt32Array(91, 89, 90, 92, 93), PackedInt32Array(94, 91, 93, 95), PackedInt32Array(96, 97, 94, 95, 74, 73), PackedInt32Array(98, 22, 23), PackedInt32Array(98, 23, 48, 99), PackedInt32Array(100, 101, 99, 48, 102), PackedInt32Array(102, 48, 51, 103, 104), PackedInt32Array(105, 106, 44, 47, 107), PackedInt32Array(8, 13, 9), PackedInt32Array(108, 109, 5, 10, 101), PackedInt32Array(100, 108, 101), PackedInt32Array(104, 103, 110, 96), PackedInt32Array(96, 110, 97), PackedInt32Array(72, 71, 111, 112), PackedInt32Array(113, 112, 111, 114), PackedInt32Array(42, 115, 113, 114, 116), PackedInt32Array(31, 30, 34, 36), PackedInt32Array(36, 35, 117), PackedInt32Array(36, 117, 52), PackedInt32Array(36, 53, 118), PackedInt32Array(36, 118, 70, 119), PackedInt32Array(69, 119, 70), PackedInt32Array(120, 68, 67, 121), PackedInt32Array(105, 120, 121, 106), PackedInt32Array(122, 107, 47, 123), PackedInt32Array(124, 122, 123, 125), PackedInt32Array(42, 124, 125, 126), PackedInt32Array(42, 126, 115), PackedInt32Array(127, 128, 41, 43), PackedInt32Array(42, 116, 43)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(2881, 2952, 2935, 2863, 2922, 2342, 2714, 2272, 2088, 2242, 2092, 1898, 2903, 1917, 2948, 1838, 2963, 1434, 2875, 1450, 2796, 1631, 2695, 1747, 2548, 1834, 2382, 1800, 2364, 1646, 2432, 1491, 2554, 1438, 2751, 1219, 2843, 1174, 2951, 1161, 2950, 938, 2685, 899, 2493, 853, 2406, 738, 2418, 579, 2509, 495, 2655, 412, 2786, 380, 2970, 371, 2871, 136, 2198, 50, 2214, 260, 2266, 422, 2306, 609, 2293, 757, 2201, 833, 2081, 825, 1963, 774, 1863, 693, 1780, 521, 1798, 288, 1744, 63, 332, 63, 33, 117, 47, 227, 759, 316, 1074, 328, 1210, 392, 1284, 462, 1462, 516, 1668, 682, 1671, 806, 1624, 907, 1471, 970, 1265, 936, 1106, 852, 989, 765, 65, 974, 71, 2942, 534, 2942, 516, 2822, 380, 2613, 368, 2389, 498, 2116, 449, 1863, 311, 1680, 335, 1486, 514, 1392, 719, 1416, 1102, 1529, 1206, 1687, 1146, 1851, 1011, 2067, 972, 2207, 1011, 2476, 1220, 2784, 1436, 2952, 2024, 2958, 2090, 2904, 2110, 2425, 2485, 2436, 2465, 2911, 2589, 2955), PackedVector2Array(1453, 1536, 1376, 1336, 1398, 1194, 1471, 1082, 1584, 996, 1738, 955, 1995, 961, 2224, 1000, 2295, 1079, 2339, 1159, 2338, 1281, 2306, 1387, 2288, 1484, 2213, 1559, 2005, 1593, 1798, 1600, 1618, 1610), PackedVector2Array(1351, 2133, 1481, 2053, 1633, 2057, 1728, 2095, 1808, 2139, 1847, 2239, 1784, 2343, 1572, 2388, 1367, 2332, 1313, 2244), PackedVector2Array(889, 1283, 1005, 1286, 1124, 1161, 1090, 1028, 1022, 936, 828, 925, 719, 1011, 684, 1151, 762, 1253), PackedVector2Array(2415, 1060, 2432, 1135, 2478, 1187, 2562, 1224, 2641, 1207, 2706, 1117, 2706, 1025, 2611, 946, 2503, 955, 2443, 996)])
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1xgh"]
+albedo_color = Color(0.309804, 0.360784, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u8n04"]
+material = SubResource("StandardMaterial3D_f1xgh")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dyc8q"]
+radius = 404.358
+
+[sub_resource type="QuadMesh" id="QuadMesh_0mt1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0rh6"]
+size = Vector2(1131.18, 302.865)
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_2wh4b")
@@ -57,15 +70,6 @@ polygon = PackedVector2Array(762, 1092, 827, 1013, 873, 989, 946, 992, 1005, 101
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="NavigationRegion2D/Collisions"]
 polygon = PackedVector2Array(1564, 1529, 1619, 1535, 2111, 1521, 2182, 1491, 2224, 1436, 2261, 1351, 2278, 1227, 2257, 1132, 2176, 1054, 2053, 1029, 1845, 1015, 1680, 1032, 1571, 1075, 1506, 1153, 1459, 1264, 1449, 1354, 1486, 1443)
 
-[node name="SpikeTrap" parent="." instance=ExtResource("5_6ykrp")]
-position = Vector2(1778, 2730)
-
-[node name="PoisonTrap" parent="." instance=ExtResource("7_kvg28")]
-position = Vector2(1684, 2400)
-
-[node name="PoisonTrap2" parent="." instance=ExtResource("7_kvg28")]
-position = Vector2(1357, 2356)
-
 [node name="EntryPoint" parent="." instance=ExtResource("7_20aqs")]
 position = Vector2(2710, 2990)
 prev_scene = 2
@@ -79,3 +83,40 @@ next_scene = 4
 position = Vector2(1988, 2367)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TempLake" type="MeshInstance2D" parent="."]
+modulate = Color(0.266667, 0.364706, 1, 1)
+position = Vector2(1153, 2611)
+scale = Vector2(794.775, 795.875)
+mesh = SubResource("SphereMesh_u8n04")
+texture = ExtResource("2_x1t2r")
+
+[node name="Killzone" parent="." instance=ExtResource("9_moq82")]
+position = Vector2(1130, 2381)
+kill_type = 1
+
+[node name="area" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(23, 227)
+shape = SubResource("CircleShape2D_dyc8q")
+
+[node name="marker" type="Marker2D" parent="Killzone"]
+position = Vector2(-228, 393)
+
+[node name="TempCliff" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0.721569, 0.333333, 1)
+position = Vector2(509, 774)
+rotation = -0.261799
+scale = Vector2(1134.5, 304.5)
+mesh = SubResource("QuadMesh_0mt1v")
+texture = ExtResource("2_x1t2r")
+
+[node name="Killzone2" parent="." instance=ExtResource("9_moq82")]
+position = Vector2(443, 786)
+
+[node name="marker" type="Marker2D" parent="Killzone2"]
+position = Vector2(-25, -95)
+
+[node name="area" type="CollisionShape2D" parent="Killzone2"]
+position = Vector2(66.4903, -12.8875)
+rotation = -0.261799
+shape = SubResource("RectangleShape2D_v0rh6")

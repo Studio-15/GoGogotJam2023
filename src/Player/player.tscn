@@ -145,6 +145,7 @@ process_callback = 0
 position_smoothing_enabled = true
 
 [node name="Stats" parent="." instance=ExtResource("3_sx0sr")]
+HEALTH = 101
 MOVE_SPEED = 550
 
 [node name="FoW" type="Sprite2D" parent="."]
