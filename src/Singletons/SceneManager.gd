@@ -1,12 +1,13 @@
 extends Node
 
-var current_scene_index: int = 0
+var current_scene_index: int = 4
 var scenes: Array = [
 	"res://Levels/world_map.tscn",
 	"res://Levels/level_0.tscn",
 	"res://Levels/level_1.tscn",
 	"res://Levels/test_level.tscn",
-	"res://Menu/Main/main.tscn"
+	"res://Menu/Main/main.tscn",
+	"res://Levels/tutorial.tscn"
 ]
 
 

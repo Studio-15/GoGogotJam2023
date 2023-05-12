@@ -37,6 +37,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Start game"
 
+[node name="Tutorial" type="Button" parent="PanelContainer/ButtonsContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
 [node name="Highscore" type="Button" parent="PanelContainer/ButtonsContainer/VBoxContainer"]
 layout_mode = 2
 text = "Highscore"
@@ -46,5 +50,6 @@ layout_mode = 2
 text = "Credits"
 
 [connection signal="pressed" from="PanelContainer/ButtonsContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="PanelContainer/ButtonsContainer/VBoxContainer/Highscore" to="." method="_on_highscore_pressed"]
 [connection signal="pressed" from="PanelContainer/ButtonsContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

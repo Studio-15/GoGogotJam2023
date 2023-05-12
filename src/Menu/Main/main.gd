@@ -16,3 +16,7 @@ func _on_highscore_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	get_tree().change_scene_to_packed(credits)
+
+
+func _on_tutorial_pressed() -> void:
+	SceneManager.change_scenes(5)
