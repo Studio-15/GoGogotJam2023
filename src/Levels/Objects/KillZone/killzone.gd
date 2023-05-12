@@ -19,16 +19,8 @@ func _ready() -> void:
 		$KillMarker.global_position = killMarker.global_position
 
 
-func _process(delta: float) -> void:
-	var a = $KillZoneArea.get_overlapping_bodies()
-	if len(a) > 0:
-		for i in a:
-			print(i.name)
-
-
 func _on_kill_zone_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
-		print(body)
 		body.pause = true
 		if kill_type == zone_type.cliff:
 			var TW_scale = create_tween()

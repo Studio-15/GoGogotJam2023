@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcsbik7av74p1"]
+[gd_scene load_steps=6 format=3 uid="uid://dcsbik7av74p1"]
 
 [ext_resource type="Script" path="res://Levels/AccessPoints/exit_point.gd" id="1_oyahx"]
+[ext_resource type="Texture2D" uid="uid://tuv56ps5f3x1" path="res://Sprites/Dot.png" id="2_ell3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w7vg"]
 size = Vector2(184, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcj3a"]
+size = Vector2(174, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfq6k"]
+size = Vector2(192, 50)
 
 [node name="ExitPoint" type="Node2D"]
 script = ExtResource("1_oyahx")
@@ -13,5 +20,33 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_0w7vg")
+
+[node name="Left" type="Node2D" parent="."]
+position = Vector2(-87, 55)
+
+[node name="Sprite2D" type="Sprite2D" parent="Left"]
+modulate = Color(0.14902, 0.317647, 0.141176, 1)
+scale = Vector2(175, 50)
+texture = ExtResource("2_ell3o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Left"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/StaticBody2D"]
+shape = SubResource("RectangleShape2D_fcj3a")
+
+[node name="Right" type="Node2D" parent="."]
+position = Vector2(96, 55)
+
+[node name="Sprite2D" type="Sprite2D" parent="Right"]
+modulate = Color(0.14902, 0.317647, 0.141176, 1)
+scale = Vector2(191.667, 50)
+texture = ExtResource("2_ell3o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Right"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right/StaticBody2D"]
+shape = SubResource("RectangleShape2D_bfq6k")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

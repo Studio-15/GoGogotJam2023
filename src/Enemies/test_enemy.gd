@@ -15,6 +15,7 @@ var current_state: Enums.ENEMY_STATE = Enums.ENEMY_STATE.IDLE:
 			nav_agent.target_desired_distance = 135
 var idle_points: Array = []
 var next_idle_location: int = 0
+var enemy_type: Enums.ENEMY_TYPE = Enums.ENEMY_TYPE.RUNNER
 
 
 func _enter_tree() -> void:
@@ -40,6 +41,7 @@ func take_damage(val: int):
 
 
 func on_death():
+	EventBus.enemy_death(enemy_type)
 	queue_free()
 
 
