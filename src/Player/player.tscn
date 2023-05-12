@@ -136,7 +136,6 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_y0ix5")
 
 [node name="Camera2D" type="Camera2D" parent="."]

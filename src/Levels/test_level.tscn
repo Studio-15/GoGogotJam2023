@@ -75,7 +75,7 @@ prev_scene = 2
 
 [node name="ExitPoint" parent="." instance=ExtResource("8_emd4c")]
 position = Vector2(59, 172)
-rotation = 1.57079
+rotation = 4.71238
 next_scene = 4
 
 [node name="TestEnemy4" parent="." instance=ExtResource("4_fwlqq")]

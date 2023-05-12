@@ -16,7 +16,6 @@ func load_new_scene():
 
 
 func enemy_death(type: Enums.ENEMY_TYPE):
-	print("Enemy died, type:", type)
 	emit_signal("enemy_death_signal", type)
 
 

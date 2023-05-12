@@ -14,6 +14,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func on_level_complete():
 	var TW_left = create_tween()
-	TW_left.tween_property($Left, "global_position:x", $Left.global_position.x - 100, 2.0)
+	TW_left.tween_property($Left, "position:x", $Left.position.x - 100, 2.0)
 	var TW_right = create_tween()
-	TW_right.tween_property($Right, "global_position:x", $Right.global_position.x + 100, 2.0)
+	TW_right.tween_property($Right, "position:x", $Right.position.x + 100, 2.0)

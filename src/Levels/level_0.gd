@@ -4,7 +4,6 @@ extends Node2D
 var enemies_alive: int = 0:
 	set(val):
 		enemies_alive = val
-		print("Enemies left: ", val)
 		if val == 0:
 			EventBus.level_complete()
 
@@ -15,5 +14,4 @@ func _ready() -> void:
 
 
 func on_enemy_death(type: Enums.ENEMY_TYPE):
-	print("?")
 	enemies_alive -= 1
