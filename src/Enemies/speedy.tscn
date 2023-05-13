@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ts63bn8v576m"]
+[gd_scene load_steps=8 format=3 uid="uid://p3124jheb1cq"]
 
-[ext_resource type="Script" path="res://Enemies/test_enemy.gd" id="1_jklcb"]
-[ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_6rfd5"]
-[ext_resource type="PackedScene" uid="uid://dsn2us7s8q813" path="res://Common/Stats/stats.tscn" id="3_tetya"]
-[ext_resource type="PackedScene" uid="uid://c4thackdffuk5" path="res://Common/HealthBar/health_bar.tscn" id="4_4oxjm"]
+[ext_resource type="Script" path="res://Enemies/test_enemy.gd" id="1_7bxjx"]
+[ext_resource type="Texture2D" uid="uid://buvyqi2kd3vre" path="res://icon.svg" id="2_stpyq"]
+[ext_resource type="PackedScene" uid="uid://dsn2us7s8q813" path="res://Common/Stats/stats.tscn" id="3_rj1bx"]
+[ext_resource type="PackedScene" uid="uid://c4thackdffuk5" path="res://Common/HealthBar/health_bar.tscn" id="4_jb8uo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqtwm"]
 size = Vector2(120, 122)
@@ -18,11 +18,11 @@ radius = 267.081
 z_index = 40
 collision_layer = 4
 collision_mask = 25
-script = ExtResource("1_jklcb")
+script = ExtResource("1_7bxjx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.0666667, 0, 1)
-texture = ExtResource("2_6rfd5")
+texture = ExtResource("2_stpyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pqtwm")
@@ -37,11 +37,10 @@ max_speed = 1000.0
 debug_enabled = true
 debug_path_custom_line_width = 2.0
 
-[node name="Stats" parent="." instance=ExtResource("3_tetya")]
-HEALTH = 15
-MOVE_SPEED = 500
+[node name="Stats" parent="." instance=ExtResource("3_rj1bx")]
+MOVE_SPEED = 600
 ATTACK = 1
-ATTACK_COOLDOWN = 0.3
+ATTACK_COOLDOWN = 0.1
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -50,7 +49,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_k8gno")
 
-[node name="HealthBar" parent="." instance=ExtResource("4_4oxjm")]
+[node name="HealthBar" parent="." instance=ExtResource("4_jb8uo")]
 position = Vector2(0, -90)
 
 [node name="DistractionArea" type="Area2D" parent="."]
